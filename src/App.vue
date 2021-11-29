@@ -43,9 +43,9 @@
       </form>
     </section>
 
-    <section v-if="diff">
-      <div>Your date of birth: {{ day }}/{{ month }}/{{ year }}</div>
-      <div>Your age: {{ age }} ({{ days }} days)</div>
+    <section v-if="birthDate">
+      <div>Your date of birth: {{ birthDateFmt }}</div>
+      <div>Your age: {{ days }} days ({{ age }} years and {{ ' x' }} days)</div>
     </section>
   </div>
 </template>
@@ -59,32 +59,44 @@ export default {
     const month = ref(null)
     const year = ref(null)
 
-    const age = computed(() => {
+    const birthDate = computed(() => {
       if (day.value && month.value && year.value) {
         const date = new Date(year.value, month.value - 1, day.value)
-        const birthDate = date.getTime()
-        const today = new Date().getTime()
-        const diff = today - birthDate
-        console.log(diff / 1000 / 60 / 60 / 24)
-        return new Date(diff).getFullYear() - 1970
+        return date.getTime()
+      } else {
+        return null
+      }
+    })
+
+    const birthDateFmt = computed(() => {
+      if (birthDate.value) {
+        const options = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }
+        const date = new Intl.DateTimeFormat('en-US', options).format(
+          birthDate.value
+        )
+        return date
       } else {
         return null
       }
     })
 
     const diff = computed(() => {
-      if (day.value && month.value && year.value) {
-        const date = new Date(year.value, month.value - 1, day.value)
-        const birthDate = date.getTime()
-        const today = new Date().getTime()
-        return today - birthDate
-      } else {
-        return null
-      }
+      const today = new Date().getTime()
+      return today - birthDate.value
+    })
+
+    const age = computed(() => {
+      return new Date(diff.value).getFullYear() - 1970
     })
 
     const days = computed(() => {
-      return diff.value / 1000 / 60 / 60 / 24
+      const ageInDays = diff.value / 1000 / 60 / 60 / 24
+      return Math.floor(ageInDays)
     })
 
     return {
@@ -93,7 +105,8 @@ export default {
       month,
       year,
       age,
-      diff,
+      birthDate,
+      birthDateFmt,
       days
     }
   }
