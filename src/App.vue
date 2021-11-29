@@ -44,8 +44,26 @@
     </section>
 
     <section v-if="birthDate">
-      <div>Your date of birth: {{ birthDateFmt }}</div>
-      <div>Your age: {{ days }} days ({{ age }} years and {{ ' x' }} days)</div>
+      <h2 class="section-title">Your date of birth: {{ birthDateFmt }}</h2>
+      <div>Your age: {{ days }} days</div>
+      <div>({{ age }} years and {{ ' x' }} days)</div>
+      <hr />
+      <strong>pending to implement...</strong>
+      <div>Next kiloday to celebrate: 99999 days</div>
+      <div>Next kiloday date</div>
+    </section>
+
+    <section v-if="birthDate">
+      <strong>pending to implement...</strong>
+      <h2 class="section-title">Some of your noteworthy kilodays:</h2>
+      <div>100 days: date</div>
+      <div>1000 days: date</div>
+      <div>5000 days: date</div>
+      <div>10000 days: date</div>
+      <div>15000 days: date</div>
+      <div>20000 days: date</div>
+      <div>25000 days: date</div>
+      <div>30000 days: date</div>
     </section>
   </div>
 </template>
