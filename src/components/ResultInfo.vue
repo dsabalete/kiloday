@@ -20,13 +20,13 @@ export default {
   setup() {
     const store = useBirthdayStore()
 
-    store.$patch({
-      birthDate: {
-        day: 10,
-        month: 1,
-        year: 1973
-      }
-    })
+    // store.$patch({
+    //   birthDate: {
+    //     day: 10,
+    //     month: 1,
+    //     year: 1973
+    //   }
+    // })
 
     const {
       isValid,
