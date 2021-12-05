@@ -78,3 +78,9 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss">
+section {
+  @apply my-4 border-4 border-double border-green-200 p-4 rounded-3xl;
+}
+</style>

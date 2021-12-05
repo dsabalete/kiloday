@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col">
+  <section class="flex flex-col text-green-200">
     <h2 class="section-title text-center text-green-400">
       Enter your date of birth
     </h2>
@@ -86,17 +86,11 @@ export default {
 </script>
 
 <style lang="postcss">
-section {
-  @apply my-4 border-4 border-double border-green-200 p-4 rounded-3xl;
-}
-.section-title {
-  @apply text-xl font-bold mb-4;
-}
 .form-group {
   @apply flex flex-row mb-4;
 }
 label {
-  @apply mb-0 w-1/3 text-green-300 text-right mr-6;
+  @apply mb-0 w-1/3 text-right mr-6;
 }
 input[type='number'] {
   @apply border-2 rounded-md w-24 text-black pl-4 bg-green-100;

@@ -1,5 +1,7 @@
 <template>
-  <div class="container max-w-screen-sm md:max-w-screen-md mx-auto px-4">
+  <main
+    class="container max-w-screen-sm md:max-w-screen-md mx-auto px-4 text-green-100"
+  >
     <Header />
 
     <BirthdayForm />
@@ -7,7 +9,7 @@
     <ResultInfo v-if="isValid" />
 
     <AdditionalInfo v-if="isValid" />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -40,15 +42,6 @@ section {
   @apply my-4 border-4 border-double border-green-200 p-4 rounded-3xl;
 }
 .section-title {
-  @apply text-xl font-bold mb-4;
-}
-.form-group {
-  @apply flex flex-row mb-4;
-}
-label {
-  @apply mb-0 w-1/3 text-green-300 text-right mr-6;
-}
-input[type='number'] {
-  @apply border-2 rounded-md w-24 text-black pl-4;
+  @apply text-xl font-bold mb-4 text-green-400;
 }
 </style>

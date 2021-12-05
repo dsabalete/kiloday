@@ -1,6 +1,6 @@
 <template>
   <header class="text-center text-green-200">
-    <h1 class="text-4xl font-bold">KiloDay</h1>
+    <h1 class="text-4xl font-bold text-green-400">KiloDay</h1>
     {{ currentDate }}
     <blockquote class="mt-4 text-center italic">
       "An alternative form of birth celebration, in contrast to the traditional
