@@ -39,6 +39,12 @@
         @change="updateDate"
       />
     </div>
+    <button
+      class="bg-green-700 rounded-full py-1 hover:bg-green-600 text-green-50 font-bold"
+      @click="wipe"
+    >
+      WIPE
+    </button>
   </section>
 </template>
 
@@ -51,9 +57,9 @@ export default {
   setup() {
     const store = useBirthdayStore()
 
-    const day = ref()
-    const month = ref()
-    const year = ref()
+    let day = ref()
+    let month = ref()
+    let year = ref()
 
     const updateDate = () => {
       if (day.value && month.value && year.value) {
@@ -61,11 +67,19 @@ export default {
       }
     }
 
+    const wipe = () => {
+      store.birthDate = null
+      day.value = null
+      month.value = null
+      year.value = null
+    }
+
     return {
       day,
       month,
       year,
-      updateDate
+      updateDate,
+      wipe
     }
   }
 }
@@ -85,6 +99,6 @@ label {
   @apply mb-0 w-1/3 text-green-300 text-right mr-6;
 }
 input[type='number'] {
-  @apply border-2 rounded-md w-24 text-black pl-4;
+  @apply border-2 rounded-md w-24 text-black pl-4 bg-green-100;
 }
 </style>

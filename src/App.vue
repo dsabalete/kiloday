@@ -23,7 +23,7 @@ export default {
   setup() {
     const store = useBirthdayStore()
 
-    store.$reset()
+    store.birthDate = null
 
     const isValid = computed(() => {
       return store.birthDate !== null
