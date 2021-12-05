@@ -51,18 +51,14 @@ export default {
   setup() {
     const store = useBirthdayStore()
 
-    const day = ref(store.birthDate.day)
-    const month = ref(store.birthDate.month)
-    const year = ref(store.birthDate.year)
+    const day = ref()
+    const month = ref()
+    const year = ref()
 
     const updateDate = () => {
-      store.$patch({
-        birthDate: {
-          day: day.value,
-          month: month.value,
-          year: year.value
-        }
-      })
+      if (day.value && month.value && year.value) {
+        store.birthDate = new Date(year.value, month.value - 1, day.value)
+      }
     }
 
     return {

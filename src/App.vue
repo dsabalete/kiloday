@@ -4,7 +4,7 @@
 
     <BirthdayForm />
 
-    <ResultInfo />
+    <ResultInfo v-if="isValid" />
 
     <!-- <section v-if="birthDate">
       <strong>pending to implement...</strong>
@@ -22,12 +22,25 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useBirthdayStore } from '@/stores/birthday'
 import Header from './components/Header.vue'
 import BirthdayForm from './components/BirthdayForm.vue'
 import ResultInfo from './components/ResultInfo.vue'
 
 export default {
-  components: { Header, BirthdayForm, ResultInfo }
+  components: { Header, BirthdayForm, ResultInfo },
+  setup() {
+    const store = useBirthdayStore()
+
+    store.$reset()
+
+    const isValid = computed(() => {
+      return store.birthDate !== null
+    })
+
+    return { isValid }
+  }
 }
 </script>
 
