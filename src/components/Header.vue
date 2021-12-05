@@ -2,6 +2,21 @@
   <header class="text-center text-green-200">
     <h1 class="text-4xl font-bold">KiloDay</h1>
     {{ currentDate }}
+    <blockquote class="mt-4 text-center italic">
+      "An alternative form of birth celebration, in contrast to the traditional
+      birthday. <br />
+      Each kiloday is 1000 days apart, starting at birth."
+    </blockquote>
+    <div class="text-right">
+      by
+      <a
+        href="https://www.urbandictionary.com/define.php?term=kiloday"
+        class="text-blue-400 hover:text-blue-300 hover:font-bold"
+        target="_blank"
+      >
+        Urban Dictionay</a
+      >
+    </div>
   </header>
 </template>
 
