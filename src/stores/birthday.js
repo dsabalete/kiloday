@@ -4,7 +4,7 @@ export const useBirthdayStore = defineStore('birthdayStore', {
   state: () => {
     return {
       today: new Date(),
-      birthDate: null
+      birthDate: new Date('2000-01-01')
     }
   }
 })

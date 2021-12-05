@@ -55,17 +55,16 @@ export default {
     })
 
     const nextKilodate = computed(() => {
-      const { birthDate } = store
-      birthDate.setDate(birthDate.getDate() + nextKilodateToCelebrate.value)
+      const time = store.birthDate.getTime()
+      const event = new Date(time)
+      event.setDate(event.getDate() + nextKilodateToCelebrate.value)
       const options = {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       }
-      return new Intl.DateTimeFormat('en-US', options).format(
-        birthDate.getTime()
-      )
+      return new Intl.DateTimeFormat('en-US', options).format(event.getTime())
     })
 
     return {

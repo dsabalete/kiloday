@@ -6,18 +6,7 @@
 
     <ResultInfo v-if="isValid" />
 
-    <!-- <section v-if="birthDate">
-      <strong>pending to implement...</strong>
-      <h2 class="section-title">Some of your noteworthy kilodays:</h2>
-      <div>100 days: date</div>
-      <div>1000 days: date</div>
-      <div>5000 days: date</div>
-      <div>10000 days: date</div>
-      <div>15000 days: date</div>
-      <div>20000 days: date</div>
-      <div>25000 days: date</div>
-      <div>30000 days: date</div>
-    </section> -->
+    <AdditionalInfo v-if="isValid" />
   </div>
 </template>
 
@@ -27,9 +16,10 @@ import { useBirthdayStore } from '@/stores/birthday'
 import Header from './components/Header.vue'
 import BirthdayForm from './components/BirthdayForm.vue'
 import ResultInfo from './components/ResultInfo.vue'
+import AdditionalInfo from './components/AdditionalInfo.vue'
 
 export default {
-  components: { Header, BirthdayForm, ResultInfo },
+  components: { Header, BirthdayForm, ResultInfo, AdditionalInfo },
   setup() {
     const store = useBirthdayStore()
 
