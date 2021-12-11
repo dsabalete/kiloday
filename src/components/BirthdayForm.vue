@@ -41,9 +41,9 @@
     </div>
     <button
       class="bg-green-700 rounded-full py-1 hover:bg-green-600 text-green-50 font-bold"
-      @click="wipe"
+      @click="reset"
     >
-      WIPE
+      RESET
     </button>
   </section>
 </template>
@@ -67,7 +67,7 @@ export default {
       }
     }
 
-    const wipe = () => {
+    const reset = () => {
       store.birthDate = null
       day.value = null
       month.value = null
@@ -79,7 +79,7 @@ export default {
       month,
       year,
       updateDate,
-      wipe
+      reset
     }
   }
 }
