@@ -15,6 +15,7 @@
 <script>
 import { computed } from 'vue'
 import { useBirthdayStore } from '@/stores/birthday'
+import { getDateTimeFormat } from '@/commons/utils'
 
 export default {
   name: 'ResultInfo',
@@ -22,15 +23,7 @@ export default {
     const store = useBirthdayStore()
 
     const birthDateFmt = computed(() => {
-      const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      }
-      return new Intl.DateTimeFormat('en-US', options).format(
-        store.birthDate.getTime()
-      )
+      return getDateTimeFormat(store.birthDate.getTime())
     })
 
     const diff = computed(() => {
@@ -58,13 +51,7 @@ export default {
       const time = store.birthDate.getTime()
       const event = new Date(time)
       event.setDate(event.getDate() + nextKilodateToCelebrate.value)
-      const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      }
-      return new Intl.DateTimeFormat('en-US', options).format(event.getTime())
+      return getDateTimeFormat(event.getTime())
     })
 
     return {

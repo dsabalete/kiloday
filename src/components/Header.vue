@@ -21,16 +21,12 @@
 </template>
 
 <script>
+import { getFormattedDateString } from '@/commons/utils'
 export default {
   name: 'Header',
   setup() {
-    const currentDate = new Date().toLocaleDateString('en-US', {
-      weekday: 'long',
-      month: 'long',
-      day: 'numeric'
-    })
     return {
-      currentDate
+      currentDate: getFormattedDateString()
     }
   }
 }
