@@ -5,7 +5,7 @@
       {{ birthDateFmt }}
     </h2>
     <div>Your age: {{ days }} days</div>
-    <div>({{ age }} years and {{ daysFromBirthday }} days)</div>
+    <div>({{ age }} years {{ daysFromBirthday }})</div>
     <br />
     <div>Next kiloday to celebrate: {{ nextKilodateToCelebrate }} days</div>
     <div>Next kiloday: {{ nextKilodate }}</div>
@@ -40,7 +40,10 @@ export default {
     })
 
     const daysFromBirthday = computed(() => {
-      return days.value % 365
+      const daysAfterBirthday = Math.floor(days.value % 365.25)
+      const textDaysFromBirthday =
+        daysAfterBirthday == 0 ? '' : `and ${daysAfterBirthday} days`
+      return textDaysFromBirthday
     })
 
     const nextKilodateToCelebrate = computed(() => {
