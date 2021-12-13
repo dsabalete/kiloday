@@ -39,12 +39,20 @@
         @change="updateDate"
       />
     </div>
-    <button
-      class="bg-green-700 rounded-full py-1 hover:bg-green-600 text-green-50 font-bold"
-      @click="reset"
-    >
-      RESET
-    </button>
+    <div class="flex">
+      <button
+        class="bg-green-700 rounded-full py-1 text-green-50 font-bold w-full mx-4 hover:bg-green-600"
+        @click="apply"
+      >
+        APPLY
+      </button>
+      <button
+        class="bg-green-700 rounded-full py-1 text-green-50 font-bold w-full mx-4 hover:bg-green-600"
+        @click="reset"
+      >
+        RESET
+      </button>
+    </div>
   </section>
 </template>
 
@@ -74,12 +82,17 @@ export default {
       year.value = null
     }
 
+    const apply = () => {
+      updateDate()
+    }
+
     return {
       day,
       month,
       year,
       updateDate,
-      reset
+      reset,
+      apply
     }
   }
 }
