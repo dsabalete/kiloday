@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { getFormattedDateString } from '@/commons/utils'
+import { getFormattedDateString } from '../commons/utils'
 export default {
   name: 'Header',
   setup() {

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { useBirthdayStore } from '@/stores/birthday'
+import { useBirthdayStore } from '../stores/birthday'
 
 export default {
   name: 'AdditionalInfo',

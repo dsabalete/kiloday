@@ -42,7 +42,7 @@
     <div class="flex">
       <button
         class="bg-green-700 rounded-full py-1 text-green-50 font-bold w-full mx-4 hover:bg-green-600"
-        @click="apply"
+        @click="updateDate"
       >
         APPLY
       </button>
@@ -58,7 +58,7 @@
 
 <script>
 import { ref } from 'vue'
-import { useBirthdayStore } from '@/stores/birthday'
+import { useBirthdayStore } from '../stores/birthday'
 
 export default {
   name: 'BirthdayForm',
@@ -82,17 +82,12 @@ export default {
       year.value = null
     }
 
-    const apply = () => {
-      updateDate()
-    }
-
     return {
       day,
       month,
       year,
       updateDate,
-      reset,
-      apply
+      reset
     }
   }
 }

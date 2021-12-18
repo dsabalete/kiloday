@@ -14,8 +14,8 @@
 
 <script>
 import { computed } from 'vue'
-import { useBirthdayStore } from '@/stores/birthday'
-import { getDateTimeFormat } from '@/commons/utils'
+import { useBirthdayStore } from '../stores/birthday'
+import { getDateTimeFormat } from '../commons/utils'
 
 export default {
   name: 'ResultInfo',
