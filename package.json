@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "cypress:open": "cypress open",
+    "e2e": "cypress run --record --key a5745942-56e0-4a02-bc84-39f78fd7ad60"
   },
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",
@@ -22,6 +24,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "cypress": "^9.3.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "vue-cli-plugin-tailwind": "~2.2.17"
