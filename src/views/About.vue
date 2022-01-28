@@ -20,11 +20,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'About'
-}
-</script>
+<script setup></script>
 
 <style lang="postcss" scoped>
 section {
