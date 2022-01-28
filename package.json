@@ -10,13 +10,16 @@
     "e2e": "cypress run --record --key a5745942-56e0-4a02-bc84-39f78fd7ad60"
   },
   "dependencies": {
+    "@sentry/tracing": "^6.17.3",
+    "@sentry/vue": "^6.17.3",
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "autoprefixer": "^9",
     "core-js": "^3.6.5",
     "pinia": "^2.0.4",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

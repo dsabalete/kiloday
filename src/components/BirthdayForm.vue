@@ -1,8 +1,6 @@
 <template>
-  <section class="flex flex-col text-green-200">
-    <h2 class="section-title text-center text-green-400">
-      Enter your date of birth
-    </h2>
+  <section>
+    <h2 class="section-title">Enter your date of birth</h2>
     <div class="form-group">
       <label for="day">Day</label>
       <input
