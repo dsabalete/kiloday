@@ -15,6 +15,7 @@ Sentry.init({
   dsn: 'https://455ae1d7facb4efbaeb9b595fbcf117c@o1129515.ingest.sentry.io/6173398',
   integrations: [
     new Integrations.BrowserTracing({
+      routingInstrumentation: Sentry.vueRouterInstrumentation(router),
       tracingOrigins: ['localhost', 'kiloday.netlify.com', /^\//]
     })
   ],
