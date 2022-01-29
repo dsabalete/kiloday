@@ -6,6 +6,7 @@
         This project is nothing more and nothing less than an experiment to test
         vue 3, pinia, tailwindcss and the new composition API
       </p>
+
       <p>
         Why did I choose the 'Kiloday' subject? Well, I was curious about the
         subject and I wanted to see how it would look like in a real world
@@ -13,14 +14,25 @@
       </p>
 
       <p>
-        I was also curious about the composition API and how it would work
-        together with vue 3.
+        Besides that, I also wanted to integrate Sentry and Cypress, and this
+        project serves as a good playground to test, break and get some fun 😁
       </p>
     </section>
+
+    <button
+      class="bg-green-700 rounded-full py-1 text-green-50 font-bold w-full mx-4 hover:bg-green-600"
+      @click="checkout"
+    >
+      Send some data to Sentry
+    </button>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const checkout = () => {
+  throw new Error('This is a test error')
+}
+</script>
 
 <style lang="postcss" scoped>
 section {
