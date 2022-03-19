@@ -13,8 +13,7 @@
         href="https://www.urbandictionary.com/define.php?term=kiloday"
         class="link"
         target="_blank"
-      >
-        Urban Dictionay</a
+        >Urban Dictionay</a
       >
     </div>
 
@@ -26,7 +25,7 @@
 </template>
 
 <script setup>
-import { getFormattedDateString } from '@/commons/utils'
+import { getFormattedDateString } from '../commons/utils'
 
 const currentDate = getFormattedDateString()
 </script>
