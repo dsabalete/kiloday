@@ -54,40 +54,27 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 import { useBirthdayStore } from '../stores/birthday'
 
-export default {
-  name: 'BirthdayForm',
-  setup() {
-    const store = useBirthdayStore()
+const store = useBirthdayStore()
 
-    let day = ref()
-    let month = ref()
-    let year = ref()
+let day = ref()
+let month = ref()
+let year = ref()
 
-    const updateDate = () => {
-      if (day.value && month.value && year.value) {
-        store.birthDate = new Date(year.value, month.value - 1, day.value)
-      }
-    }
-
-    const reset = () => {
-      store.birthDate = null
-      day.value = null
-      month.value = null
-      year.value = null
-    }
-
-    return {
-      day,
-      month,
-      year,
-      updateDate,
-      reset
-    }
+const updateDate = () => {
+  if (day.value && month.value && year.value) {
+    store.birthDate = new Date(year.value, month.value - 1, day.value)
   }
+}
+
+const reset = () => {
+  store.birthDate = null
+  day.value = null
+  month.value = null
+  year.value = null
 }
 </script>
 
