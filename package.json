@@ -10,8 +10,8 @@
     "e2e": "cypress run --record --key a5745942-56e0-4a02-bc84-39f78fd7ad60"
   },
   "dependencies": {
-    "@sentry/tracing": "^6.17.3",
-    "@sentry/vue": "^6.17.3",
+    "@sentry/tracing": "^6.18.2",
+    "@sentry/vue": "^6.18.2",
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "autoprefixer": "^9",
     "core-js": "^3.6.5",
