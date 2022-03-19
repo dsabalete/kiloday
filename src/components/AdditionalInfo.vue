@@ -12,23 +12,14 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import { useBirthdayStore } from '../stores/birthday'
 
-export default {
-  name: 'AdditionalInfo',
-  setup() {
-    const store = useBirthdayStore()
+const store = useBirthdayStore()
 
-    const getKiloDate = (days) => {
-      const birthday = new Date(store.birthDate.getTime())
-      birthday.setDate(birthday.getDate() + days)
-      return birthday.toLocaleDateString()
-    }
-
-    return {
-      getKiloDate
-    }
-  }
+const getKiloDate = (days) => {
+  const birthday = new Date(store.birthDate.getTime())
+  birthday.setDate(birthday.getDate() + days)
+  return birthday.toLocaleDateString()
 }
 </script>
